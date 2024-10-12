@@ -1,0 +1,29 @@
+﻿@page "/counter"
+@rendermode InteractiveServer
+
+<PageTitle>Counter</PageTitle>
+
+<h1>Counter</h1>
+
+<div role="status" style="padding-bottom: 1em;">
+    Current count: <FluentBadge Appearance="Appearance.Neutral">@currentCount</FluentBadge>
+</div>
+
+<FluentButton Appearance="Appearance.Accent" @onclick="IncrementCount">Click me</FluentButton>
+
+<FluentNumberField @bind-Value="leading">
+    Leading Period
+</FluentNumberField>
+
+<InputNumber @bind-Value="leading2" />
+
+@code {
+    private int currentCount = 0;
+    public int leading;
+    public int leading2;
+
+    private void IncrementCount()
+    {
+        currentCount++;
+    }
+}
